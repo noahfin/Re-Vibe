@@ -4,7 +4,6 @@ class AuthorizeApiRequest
 	def initialize(headers = {})
 
 		@headers = headers
-		binding.pry
 	end
 
 	def call
@@ -26,11 +25,10 @@ class AuthorizeApiRequest
 	end
 
 	def http_auth_header
-		 binding.pry
 		if @headers['Authorization'].present?
     
 
-			return headers['Authorization'].split(' ').last
+			return @headers['Authorization'].split(' ').last
 		else
 		errors.add(:token, 'Missing token')
 		 end
