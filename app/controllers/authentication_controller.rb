@@ -4,6 +4,7 @@ class AuthenticationController < ApplicationController
 	
 
 	def authenticate
+
 		command = AuthenticateUser.call(params[:email], params[:password])
 
 		
@@ -14,4 +15,5 @@ class AuthenticationController < ApplicationController
 		end
 	end
 end
+
 
